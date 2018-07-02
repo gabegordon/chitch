@@ -1,11 +1,22 @@
-QT += qml quick
+QT += qml quick network
 
 CONFIG += c++11
 
-SOURCES += main.cpp \
-    backend.cpp
+SOURCES += src/main.cpp
 
 RESOURCES += qml.qrc
+
+OTHER_FILES += qml/main.qml
+OTHER_FILES += qml/BufferListView.qml
+OTHER_FILES += qml/ChatPage.qml
+OTHER_FILES += qml/ConnectPage.qml
+OTHER_FILES += qml/MessageFormatter.qml
+OTHER_FILES += qml/TextBrowser.qml
+OTHER_FILES += qml/TextEntry.qml
+OTHER_FILES += qml/TopicLabel.qml
+OTHER_FILES += qml/UserListView.qml
+
+include(lib/libcommuni/src/src.pri)
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =
@@ -29,5 +40,4 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-HEADERS += \
-    backend.h
+HEADERS +=
