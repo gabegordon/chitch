@@ -1,6 +1,14 @@
+include(lib/libcommuni/src/src.pri)
+
+TEMPLATE = app
+
 QT += qml quick network
 
 CONFIG += c++11
+
+CONFIG += communi
+
+COMMUNI += core
 
 SOURCES += src/main.cpp
 
@@ -16,7 +24,6 @@ OTHER_FILES += qml/TextEntry.qml
 OTHER_FILES += qml/TopicLabel.qml
 OTHER_FILES += qml/UserListView.qml
 
-include(lib/libcommuni/src/src.pri)
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =
